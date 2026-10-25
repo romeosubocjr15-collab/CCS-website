@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Areas that stay dark in both themes (nav, hero, footer) */
+.always-dark {
+  color: #f8f9fa;
+}
+html.light main section:not(.always-dark) .text-gold,
+html.light main section:not(.always-dark) .eyebrow {
+  color: #523e0c;
+}
+html.light .text-ink {
+  color: #062e2a;
+}
+html.light .text-muted {
+  color: #40605a;
+}
+html.light .always-dark .text-ink,
+.always-dark .text-ink {
+  color: #f8f9fa;
+}
+html.light .always-dark .text-muted,
+.always-dark .text-muted {
+  color: #c7d2d9;
+}
+html.light .bg-surface {
+  background-color: #eef6f1;
+}
+html.light .bg-surface-alt {
+  background-color: #f5f8f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply font-sans antialiased;
+  background: #062e2a;
+  color: #f8f9fa;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+html.light body {
+  background: #eef6f1;
+  color: #062e2a;
+}
+
+@layer components {
+  .container-ccs {
+    @apply mx-auto w-full max-w-[1400px] px-6 lg:px-12;
+  }
+  .glass {
+    @apply rounded-xl border shadow-glass backdrop-blur-md;
+    background: rgba(4, 35, 31, 0.75);
+    border-color: rgba(244, 185, 66, 0.35);
+  }
+  html.light .glass {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(180, 130, 10, 0.5);
+  }
+  .always-dark .glass,
+  html.light .always-dark .glass {
+    background: rgba(9, 27, 66, 0.75);
+    border-color: rgba(244, 185, 66, 0.35);
+  }
+  .glass-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-glow;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.28em] text-gold;
+  }
+  .gold-line {
+    @apply h-px w-14 bg-gradient-to-r from-gold to-transparent;
+  }
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #ffd36e 0%, #f4b942 55%, #d4a017 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.toast-enter-active,
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+.toast-enter-from,
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #062e2a;
+}
+::-webkit-scrollbar-thumb {
+  background: #726f6a;
+  border-radius: 8px;
+}
+
+/* Discipline patterns used by program pages */
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+.pattern-code {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(150, 216, 62, 0.1) 0 2px,
+    transparent 2px 26px
+  );
+}
+.pattern-diag {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(199, 146, 234, 0.12) 0 2px,
+    transparent 2px 22px
+  );
+}
+.pattern-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(244, 185, 66, 0.12) 0 1px,
+    transparent 1px 30px
+  );
+}

@@ -1,0 +1,1 @@
+import{o as e,g as o,w as t,C as l,v as r,l as n}from"./index-QoBZn0ho.js";const m={__name:"GlassCard",props:{hover:Boolean,tag:{type:String,default:"div"}},setup(a){return(s,c)=>(e(),o(n(a.tag),{class:r(["glass p-6",a.hover&&"glass-hover"])},{default:t(()=>[l(s.$slots,"default")]),_:3},8,["class"]))}};export{m as _};

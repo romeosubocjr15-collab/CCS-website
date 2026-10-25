@@ -1,0 +1,1 @@
+import{k as i,u as f,j as l}from"./index-QoBZn0ho.js";function d(o,s,n=""){const e=l(n),u=i(()=>{const r=e.value.trim().toLowerCase(),t=f(o);return r?t.filter(a=>s.some(c=>String(a[c]??"").toLowerCase().includes(r))):t});return{query:e,filtered:u}}export{d as u};
